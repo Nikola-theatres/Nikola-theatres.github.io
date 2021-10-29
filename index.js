@@ -1,4 +1,4 @@
-import page from "./node_modules/page/page.mjs";
+import page from '//unpkg.com/page/page.mjs';
 import {middleware, setMoviesPage, setLoginPage, getMovieInformation, setCinemasPage, setBookPage, setTicket, chooseSeats, setAboutUsPage, setContactsPage, setHomePage, setOffersPage, setAdminPanel, adminEdit, adminDelete, adminCreate} from "/src/app.js";
 
 page("/", middleware, setHomePage);
