@@ -2,7 +2,7 @@
   "name": "CinemaApp",
   "version": "1.0.0",
   "description": "Cinema SPA for learning purposes",
-  "main": "index.js",
+  "main": "index.html",
   "type": "module",
   "directories": {
     "test": "test"
