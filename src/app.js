@@ -238,7 +238,6 @@ export async function setBookPage(ctx, next) {
         let cinemaName = e.target.options[e.target.selectedIndex].text;
         let chosenCinema = data.getCinemaDataByName(cinemaName);
         data.chosenCinema = chosenCinema; 
-        console.log(data);
         ctx.render(bookMovieTemplate(data), mainContainer);
     });
     document.getElementById("date-picker").addEventListener("click", function handleDatePicker(e) {
@@ -585,7 +584,6 @@ function getSliderDomElements(containerClass, imagesClass, buttonsClass = "", in
 function setSliderImages(container, images, imgbtns = [], indicators = [], direction="left") {
     let colors = ["#FF7043", "#3D5AFE", "#FFD600", "#26C6DA", "#9575CD", "#64B5F6", ];
     let slidesContainerProps = container.getBoundingClientRect();
-    console.log(slidesContainerProps);
     images.map((x, i) => {
         x.style.width = Math.floor(slidesContainerProps.width) + "px";
         x.style.height = slidesContainerProps.height + "px";
