@@ -1,0 +1,1997 @@
+*{
+    box-sizing: border-box;
+    font-family: serif;
+}
+/* layout-containers */
+.body-fit-vh{
+    display: grid;
+    max-height: 2000px;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: repeat(10, 10%);
+    grid-template-columns: repeat(12, 8.333%);
+}
+#header-container{
+    grid-area: 1/1/2/13;
+    background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+.wrapper {
+    background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: grid;
+    grid-template-rows: repeat(24, 4.166%);
+    grid-template-columns: repeat(12, 8.333%);
+    grid-area: 2/2/10/12;
+}
+.leftBanner{
+    grid-area: 2/1/10/2;
+    overflow: hidden;
+    background-color: hsl(237, 49%, 15%);
+}
+.rightBanner{
+    grid-area: 2/12/10/13;
+    overflow: hidden;
+    background-color: hsl(237, 49%, 15%);
+}
+#footer-container{
+    grid-area: 10/1/11/13;
+    background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sideAds{
+   height: 100%;
+   object-fit: contain;
+}
+
+/* navigation */
+.navbar{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    grid-area: 1/1/2/13;
+    display: grid;
+    grid-template-columns: repeat(12, 8.33%);
+    grid-template-rows: repeat(3, 33.33%);
+}
+#logo{
+    grid-area: 1/2/4/4;
+    display: flex;
+    align-items: center;
+    color: rgba(47, 182, 232, 0.886);
+    
+}
+#logo > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo > h3{
+    font-size: 1.5rem;
+    text-shadow: .0625rem .13rem  grey;
+}
+#list{
+    grid-area: 2/4/3/8;
+    display: flex;
+    flex-direction: row;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+
+}
+.ulist{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    text-align: center;
+    color:white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.ulist:hover{
+    color:rgba(0, 200, 255, 0.927);
+    cursor: pointer;
+}
+#sign{
+    display: flex;
+    grid-area: 2/9/3/12;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.loginBtn{
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+}
+/* mobile-nav */
+.mobile-nav{
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* transition: width .5s ease; */
+    /* overflow: hidden; */
+}
+.active-nav{
+    width: clamp(18rem, 20rem, 40rem);
+    height: max(100vh);
+    transition: width .5s ease;
+    display: flex;
+    flex-direction: column;
+    
+}
+.nav-row{
+    overflow: hidden;
+    background-color: rgba(13, 10, 61, 0.514);
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 0;
+}
+.active-rows{
+    width: 100%;
+    height: clamp(1.5rem, 3rem, 3.1rem);
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.767);
+    background-color: rgba(13, 10, 61, 0.914);
+    z-index: 2;
+    display: block;
+}
+.active-rows:hover{
+    color: white;
+    background-color: rgba(22, 19, 65, 0.914);
+
+}
+.menu-icon-container{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    align-self: center;
+    justify-self: flex-start;
+    padding: 0;
+}
+.menu-nav-icon{
+    width: 3rem;
+    height: 3rem;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon{
+    margin-top: 0;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 3rem;
+}
+.x-icon-container{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    align-self: center;
+    justify-self: flex-end;
+    padding: 0;
+}
+.x-icon-nav{
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    
+}
+.hide-icon{
+    color: transparent;
+    fill: none;
+   
+}
+/* movies-view*/
+.movieBanners{
+    overflow: scroll;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3vw 2vw;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-area: 1/1/25/13;
+}
+.component{
+    display: grid;
+    overflow: hidden;
+    grid-template-rows: repeat(12, 8.333%);
+    grid-template-columns: repeat(10, 10%);
+    width: min(12rem);
+    height: min(22rem);
+    margin: 1rem;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: .3rem;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.2),rgba(255,255,255,0.3));
+    box-shadow: .5rem 1rem 1.5rem black;
+}
+.movieBanners::-webkit-scrollbar-track { 
+  border-radius: .7rem;         
+}
+.movieBanners::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 182, 232, 0.886);    
+  border-radius: .7rem;       
+  border: 2px solid rgba(47, 182, 232, 0.886);  
+}
+.movieBanners::-webkit-scrollbar {
+  width: .7rem;
+  height: .7rem;
+  border-radius: .7rem;    
+}
+.premiere.prem{
+    grid-area: 1/1/2/13;
+    background: radial-gradient(rgba(47, 182, 232, 0.886),rgba(28, 175, 233, 0.644));
+    text-align: center;
+    padding: .33rem;
+    align-content: center;
+    font-size: x-large;
+    color: white;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+.banner {
+    grid-area: 2/1/12/13;
+    width: 100%;
+    height: 100%;
+}
+.infoContainer{
+    grid-area: 11/1/12/11;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title{
+    grid-area: 12/1/13/11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title > p{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 182, 232, 0.886);
+    padding: .3rem;
+    margin : 0;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem ;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+}
+.btn-link{
+    height: 90%;
+    width: 40%;
+    background-color: transparent;
+    text-decoration: none;
+}
+.btn-link > button{
+    border-color: white;
+    border-width: .125rem;
+    border-radius: .3rem;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-link > button:hover{
+    border-color: rgba(47, 182, 232, 0.886);
+    color: rgba(47, 182, 232, 0.886);
+}
+
+/* book-view */
+.cinemas-book-container{
+    grid-area: 1/1/25/13;
+    max-height: inherit;
+    overflow: hidden;
+    background-image: url(../assets/3form.jpg);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+#select-cinema{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    width: 100%;
+}
+#select-cinema > label{
+    color: rgba(255, 225, 0, 0.925);
+    margin-right: 10px;
+}
+#select-cinema-name{
+    width: 25vw;
+    border-style: none;
+    background-color: rgba(255, 225, 0, 0.925);
+}
+.movie-projections-container{
+    width: 100%;
+    height: 75%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow:scroll;
+    justify-content: space-evenly;
+    row-gap: 1.25rem;
+    border-radius: 0.3rem;
+}
+.movie-projections-container::-webkit-scrollbar-track { 
+  border-radius: .625rem;         
+}
+.movie-projections-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 225, 0, 0.925);    
+  border-radius: .625rem;       
+  border: .125rem solid rgba(255, 225, 0, 0.925);  
+}
+.movie-projections-container::-webkit-scrollbar {
+  width: .625rem;
+  height: .625rem;
+  border-radius: .625rem;    
+}
+.projection-component{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: repeat(12, 8.333%);
+    grid-template-columns: repeat(10, 10%);
+    width: clamp(18rem, 23rem, 26rem);
+    height: clamp(8rem, 10.5rem, 12rem);
+    border-radius: .3rem;
+    border-style: solid;
+    border-color: transparent;
+    overflow: hidden;
+    background: linear-gradient(to left top, rgba(13, 10, 61, 0.514),rgba(43, 12, 104, 0.044));
+    box-shadow: .5rem .66rem 1.5rem black;
+}
+.projection-component:hover{
+   border-style: solid;
+   border-color: rgba(255, 225, 0, 0.925);
+}
+
+.img-movie-book{
+    grid-area: 1/1/13/4;
+    width: 100%;
+    height: 100%;
+}
+
+.projection-btn{
+    border-radius: 0px;
+    padding: 0;
+    height: 80%;
+    width: clamp(30px, 10%, 80px);
+    border-color: transparent;
+    background-color: rgba(255, 225, 0, 0.925);
+    color: black;
+    font-size: min(70%);
+    font-style: bold;
+    cursor: pointer;
+    font-weight: bold;
+}
+.projection-btn:hover{
+    background-color:rgb(245, 228, 98);
+}
+.selected-day{
+    border-radius: 0px;
+    height: 80%;
+    width: clamp(30px, 10%, 80px);
+    border-color: transparent;
+    color: rgba(255, 225, 0, 0.925);
+    background-color: black;
+    font-size: min(70%);
+    font-style: bold;
+    cursor: pointer;
+    font-weight: bold;
+}
+.selected-day:hover{
+    background-color: rgba(0, 0, 0, 0.219);
+}
+.rounded-left{
+    border-top-left-radius: 0.33rem;
+    border-bottom-left-radius: 0.33rem;
+}
+.rounded-right{
+    border-top-right-radius: 0.33rem;
+    border-bottom-right-radius: 0.33rem;
+}
+.projection-component > h2{
+    color: rgba(255, 225, 0, 0.925);
+    grid-area: 1/5/3/11;
+    font-size: clamp(.3rem, 1.2rem, 1.8rem);
+}
+.theatre-name{
+    color: white;
+    grid-area: 3/5/4/11;
+
+}
+.choose-projection{
+    grid-area: 7/4/13/11;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: .625rem;
+    flex-wrap: wrap;
+}
+.click-projection{
+    border-radius: .33rem;
+    height: 40%;
+    width: 30%;
+    margin-right: 5px;
+    border-color: transparent;
+    background-color: rgba(255, 225, 0, 0.925);
+    color: black;
+    font-size: clamp(.5rem, 1rem, 1.2rem);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.click-projection:hover{
+    background-color:rgb(245, 228, 98);
+}
+.disabled-btn{
+   border-radius: .33rem;
+    height: 40%;
+    width: 30%;
+    margin-right: 5px;
+    border-color: transparent;
+    background-color:rgb(192, 185, 183);
+    color: rgba(41, 39, 39, 0.192);
+    font-size: clamp(.5rem, 1rem, 1.2rem);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.date-picker-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10%;
+    width: 100%;
+}
+.dates-container{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.string-date{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.string-date > p{
+    padding: .7rem 0;
+    margin: 0;
+    background-color: rgba(255, 225, 0, 0.925);
+    width: max(50%, 60px);
+    height: 80%;
+    border-radius: .33rem;
+    font-size: 100%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* movie-information-view */
+#sub-main{
+    grid-area: 1/1/25/13;
+    display: flex;
+    width: min(40rem);
+    width: max(100%);
+    align-items: center;
+    justify-content: center;
+    background-image: url("/assets/1a.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.information-wrapper{
+    display: grid;
+    border-radius: .33rem;
+    grid-template-columns: 5% repeat(11, 8.6363%);
+    grid-template-rows: repeat(12, 8.33%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(65vw, 20rem);
+    height: max(35vw, 16rem);
+    transform: translate(-50%, -50%);
+    background: radial-gradient( rgba(255, 255, 255, 0.03),rgba(255,255,255,0.2));
+    color: white;
+    box-shadow: .5rem 1rem 1.5rem black;
+}
+#movieTitle{
+    grid-area: 1/2/2/13;
+    text-align: center;
+    font-size: 2rem;
+    text-justify: center;
+}
+#information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-area: 2/2/13/9;
+}
+#originalBanner{
+    grid-area: 1/9/11/13;
+    width: 80%;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+    border-radius: .625rem;
+
+}
+#svgs{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+#innerPar{
+    width:100%;
+    height:35%;
+    overflow:auto;
+}
+#innerPar::-webkit-scrollbar-track {
+  background-color: grey;    
+  width: .33rem;
+  border-radius: .625rem;         
+}
+#innerPar::-webkit-scrollbar-thumb {
+  background-color: white;    
+  width: .25rem;
+  height: .25rem;
+  border-radius: .625rem;       
+  border: 2px solid rgba(239, 236, 232, 0.742);  
+}
+#innerPar::-webkit-scrollbar {
+  width: .625rem;
+  border-radius: .625rem;      
+}
+#infoTable{
+    width: 100%;
+    height: 30%;
+}
+#premiereDate, #durationInformation{
+    width: 50%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(6, 16.666%);
+    grid-template-rows: repeat(2,50%);
+}
+#svgDate, #durationSVG{
+    grid-area:1/1/3/3;
+}
+#pPremDate, #durationOfMovie{
+    grid-area: 1/3/2/7;
+    font-size: 1rem;
+   
+}
+#dateText, #durHours{
+    grid-area: 2/3/3/7;
+    
+}
+.trInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.tdInfo{
+    width: 80%;
+}
+.tdConst{
+    width: 20%;
+}
+#svgDate > img{
+    width: 100%;
+    height:100%;
+}
+#durationSVG > img{
+    width: 100%;
+    height:100%;
+}
+.book-tickets{
+    grid-area: 11/10/12/13;
+    border-radius: .625rem;
+    border-color: transparent;
+    width: 8vw;
+    height: 7vh;
+    background-color: rgba(0, 200, 255, 0.678);
+    cursor: pointer;
+    box-shadow: .5rem 1rem 1.5rem black;
+}
+.book-tickets > button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 0.8rem;
+    font-style: bold;
+    cursor: pointer;
+}
+.book-tickets:hover{
+    background-color: rgb(0, 200, 255);
+}
+
+/* cinemas-view */
+.theatre-container{
+    grid-area: 1/1/25/13;
+    overflow: hidden;
+    background-image: url(../assets/3form.jpg);
+    background-size: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    justify-content: space-evenly;
+    overflow: scroll;
+}
+.theatre-container::-webkit-scrollbar-track { 
+  border-radius: .625rem;         
+}
+.theatre-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 225, 0, 0.925);;    
+  border-radius: .625rem;       
+  border: 2px solid rgba(255, 225, 0, 0.925);;  
+}
+.theatre-container::-webkit-scrollbar {
+  width: .625rem;
+  height: .625rem;
+  border-radius: .625rem;    
+}
+.theatre-component{
+    position: relative;
+    display: grid;
+    padding: 1rem;
+    grid-template-rows: repeat(12, 8.333%);
+    grid-template-columns: repeat(10, 10%);
+    grid-row-gap: .3rem;
+    width: clamp(18rem, 20rem, 22rem);
+    height: clamp(9rem, 10rem, 11rem);
+    border-radius: .33rem;
+    background: linear-gradient(to left top, rgba(13, 10, 61, 0.514),rgba(43, 12, 104, 0.044));
+    box-shadow: .5rem 1rem 1.5rem black;
+}
+.theatre-component:hover{
+   border-style: solid;
+   border-color: rgba(255, 225, 0, 0.925);
+}
+.thanchor{
+  position: absolute;
+  width: clamp(3.5rem, 4.5rem, 4.8rem);
+  height: clamp(1.6rem, 2.1rem, 2.25rem);
+  bottom: 1rem;
+  right: 1rem;
+}
+.theatre-btn{
+    
+    border-radius: .625rem;
+    border-color: transparent;
+    background-color: rgba(255, 225, 0, 0.925);
+    color: black;
+    font-size: clamp(.3rem, .6rem, 7rem);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.theatre-btn:hover{
+    background-color:rgb(245, 228, 98);
+}
+.theatre-component > h2{
+    color: rgba(255, 225, 0, 0.925);
+    grid-area: 1/1/3/11;
+    font-size: clamp(.4rem, 1.2rem, 1.5rem);
+}
+.theatre-city{
+    color: white;
+    grid-area: 3/1/4/11;
+    font-size: clamp(.7rem, .9rem, 1rem);
+
+}
+.theatre-address{
+    color: white;
+    grid-area: 4/1/6/11;
+    font-size: clamp(.7rem, .9rem, 1rem);
+}
+.theatre-halls{
+    color: white;
+    grid-area: 6/1/7/11;
+    font-size: clamp(.7rem, .9rem, 1rem);
+}
+
+/* login-view-form */
+.sub-main-form-container{
+    grid-area: 1/1/24/13;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    width: min(20rem);
+    height: 90%;
+    display: flex;
+}
+.btns-container{
+    display: flex;
+    flex-flow: row wrap;
+    width: min(20rem);
+    height: 2rem;
+    max-height: 10%;
+}
+.form-login{
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    border-top-left-radius: 1rem;
+    border-color: transparent;
+    font-weight: bold;
+}
+.form-register{
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    border-top-right-radius: 1rem;
+    color: brown;
+    border-color: transparent;
+    font-weight: bold;
+}
+.non-active-btn{
+    background-color: rgb(255, 55, 0);
+    color: white;
+    font-style: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.active-btn{
+    color: rgb(255, 55, 0);
+    background-color: white;
+    font-style: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.loginForm{
+    background-color: white;
+    display: grid;
+    grid-template-rows: repeat(12, 8.33%);
+    grid-template-columns: repeat(6, 16.66%);
+    padding: 1.25rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-style: solid;
+    border-color:transparent;
+    box-shadow: .3rem .625rem .625rem rgba(255, 255, 255, 0.092);
+    width: 100%;
+    height: 100%;
+}
+
+.loginForm > h2{
+    grid-area: 1/1/2/7;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: bold;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.loginForm > p{
+    grid-area: 2/1/4/7;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(106, 102, 102);
+    padding: 0.625rem;
+    margin: 0;
+    border: none;
+}
+#input-container{
+    grid-area: 4/1/12/7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+#input-container > input[type=text],#input-container > input[type=password]{
+    background-color: rgba(243, 241, 244, 0.927);
+    border-radius: 1rem;
+    margin-bottom: .625rem;
+    padding-left: 1rem;
+    height: 16%;
+    width: 85%;
+    border-color: silver;
+    font-size: large;
+}
+#log-submit{
+    grid-area: 11/3/13/5;
+    width: 100%;
+    height: 8vh;
+    border-radius: 1rem;
+    background-color: rgb(255, 55, 0);
+    color: white;
+    font-style: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#log-submit:hover{
+    background-color: rgb(255, 106, 64);
+}
+.x-icon{
+    
+    color: grey;
+    cursor: pointer;
+}
+#xbtn{
+    grid-area: 1/6/2/7;
+    border: none;
+    background-color: transparent;
+}
+
+/* set-ticket-view */
+
+.ticket-main-container{
+    grid-area: 1/1/25/13;
+    display: grid;
+    grid-template-rows: repeat(10, 10%);
+    grid-template-columns: repeat(12, 8.33%);
+    background-image: url(../assets/3form.jpg);
+}
+.ticket-banner-container{
+    grid-area: 2/2/10/5;
+    border-style: solid;
+    overflow: hidden;
+    border-radius: .33rem;
+    box-shadow: .625rem 1.25rem 1rem black;
+}
+.ticket-banner-container > img{
+    width: 100%;
+    height: 100%;
+    border-radius: .33rem;
+   
+}
+.previous-selections{
+    grid-area: 1/6/6/13;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    
+}
+.previous-selections > article{
+    grid-area: 1/6/6/13;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.2),rgba(255,255,255,0.3));
+    border-radius: .625rem;
+    height: 100%;
+    width: 75%;
+    padding: 1.5rem;
+    box-shadow: 0.5rem 1rem 1.5rem black;
+}
+.previous-selections > article > h3{
+    font-size: large;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.ticket-select-menus{
+    grid-area: 6/6/11/13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem;
+}
+.ticket-select-menus > label{
+    color: rgba(255, 225, 0, 0.925);
+    margin-right: .625rem;
+    
+}
+.select-menu{
+    width: 15vw;
+    border-style: none;
+    background-color: rgba(255, 225, 0, 0.925);
+    margin-bottom: .625rem;
+}
+#choose-seats-btn{
+    width: 20%;
+    height: 18%;
+    border-radius: .33rem;
+    margin-top: 3rem;
+    font-size: .7rem;
+    box-shadow: .33rem .625rem 1rem black;
+}
+
+/* cinema-hall-view */
+
+.cinema-hall-wrapper{
+    position: relative;
+    grid-area: 1/1/25/13;
+    min-width: 692px;
+    min-height: 420px;
+    border-radius: .33rem;
+    border-style: solid;
+    border-color: transparent;
+    overflow: hidden;
+    background: linear-gradient(to left top, rgba(13, 10, 61, 0.514),rgba(43, 12, 104, 0.044));
+    box-shadow: .5rem .625rem 1.5rem black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cinema-hall-wrapper > h3{
+    width: 45%;
+    height: 7%;
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+.legend{
+    width: 55%;
+    height: 7%;
+    display: flex;
+    text-align: center;
+}
+.free-seats{
+    width: 25%;
+    color: white;
+}
+.free-seats:before{
+    content: "ok";
+    color: hsl(237, 49%, 15%);
+    background-color: hsl(237, 49%, 15%);
+    border-style: dotted;
+    border-color: white;
+    margin-right: .125rem;
+}
+.sold-seats{
+    width: 25%;
+    color: white;
+}
+.sold-seats:before{
+    content: "ok";
+    color: grey;
+    background-color: grey;
+    margin-right: .125rem;
+}
+.your-seats{
+    width: 25%;
+    color: white;
+}
+.your-seats:before{
+    content: "ok";
+    color: rgb(0, 227, 0);
+    background-color: rgb(0, 227, 0);
+    margin-right: .125rem;
+}
+.scheme{
+    width: 80%;
+    height: 93%;
+}
+.scheme-table{
+    width: 100%;
+    height: 100%;
+}
+.scheme-tr{
+    width: 100%;
+    height: 5%;
+}
+.scheme-td{
+    background-color:transparent;
+    width: 2.4vw;
+    height: 2.4vw;
+    text-align: center;
+    color: white;
+    border-style:solid;
+    border-width: .1rem;
+    border-radius: .625rem;
+    border-color: white;
+    cursor: pointer;
+}
+.row-number{
+    color:hsl(237, 49%, 15%);
+    background-color: white;
+    width: 4.8%;
+    text-align: center;
+    border-radius: .625rem;
+}
+.invisible{
+    background-color: transparent;
+    color: transparent;
+    border: none;
+
+}
+.chosen-seat{
+    background: rgb(0, 227, 0);
+}
+.sold-seat{
+    background: gray;
+}
+.ticket-information-container{
+    width: 20%;
+    height: 93%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+.ticket-info{
+    width: 100%;
+    height: 65%;
+}
+.ticket-info > p{
+    width: 100%;
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    background-color: transparent;
+    color: white;
+}
+.ticket-info > p > span{
+    color: white;
+    font-weight: bold;
+}
+.btn-container{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 1.25rem;
+}
+.confirm-btn{
+    width: 50%;
+    height: 25%;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: .33rem;
+    border-color: white;
+    cursor: pointer;
+}
+.confirm-btn:hover{
+    background-color: hsl(237, 15%, 26%);
+}
+.confirmation-message{
+    display: none;
+    position: absolute;
+    background-color:  hsl(214, 47%, 23%);
+    border-radius: .33rem;
+    align-items: center;
+    justify-content: center;
+    width: min(300px);
+    height: 20%;
+    margin-top: 20%;
+    border-style: double;
+    border-color: white;
+    border-radius: .33rem;
+}
+.confirmation-message > div{
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-size: large;
+}
+/* loader */
+#circle2 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  border: 4px rgba(53, 240, 243, 0.925) solid;
+  border-top: 4px transparent solid;
+  border-radius: 50%;
+  -webkit-animation: spin2 1s infinite linear;
+          animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+/* footer */
+.footer-sub{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* about-us-view */
+.about-container{
+    grid-area: 1/1/25/13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-about{
+    width: 100%;
+    height: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: inline-block;
+    overflow: scroll;
+}
+#about-us-img{
+    border-radius: .625rem;
+    border-width: .15rem;
+    border-color: white;
+    border-style:double;
+    float: left;
+    width: 40%;
+    height: 50%;
+    margin-top: 1.25rem;
+    margin-right: 2rem;
+    margin-bottom: 1.25rem;
+}
+.img-about > h2{
+    color: white
+}
+.img-about > p{
+    color: white;
+} 
+.img-about > p > span{
+    color: rgba(53, 240, 243, 0.925);
+} 
+.img-about::-webkit-scrollbar-track { 
+  border-radius: .625rem;         
+}
+.img-about::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 182, 232, 0.886);    
+  border-radius: .625rem;       
+  border: 2px solid rgba(47, 182, 232, 0.886);  
+}
+.img-about::-webkit-scrollbar {
+  width: .625rem;
+  height: .625rem;
+  border-radius: .625rem;    
+}
+
+/* contacts-view */
+.contacts-container{
+    grid-area: 1/1/25/13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-contacts{
+    width: 100%;
+    height: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: block;
+    overflow: scroll;
+}
+#contacts-us-img{
+    border-radius: .625rem;
+    border-width: .15rem;
+    border-color: white;
+    border-style:double;
+    float: right;
+    width: 40%;
+    height: 90%;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+.img-contacts > h2{
+    margin-top: 2rem;
+    color: white
+}
+.img-contacts > p{
+    margin-top: 2rem;
+    color: rgba(47, 182, 232, 0.886);
+}
+.location{
+    width: 50%;
+    height: 15%;
+    margin-bottom: 1.25rem;
+}
+.location > p{
+    color:white;
+    padding: 0;
+    margin: 0;
+}
+.img-contacts::-webkit-scrollbar-track { 
+  border-radius: .625rem;         
+}
+.img-contacts::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 182, 232, 0.886);    
+  border-radius: .625rem;       
+  border: .12rem solid rgba(47, 182, 232, 0.886);  
+}
+.img-contacts::-webkit-scrollbar {
+  width: .625rem;
+  height: .625rem;
+  border-radius: .625rem;    
+}
+
+/* image-slider-view-homepage */
+.slider-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   
+    background-color: transparent;
+    width: 75vw;
+    height: 33vw;
+    display: flex;
+    flex-direction: row;
+}
+.slides-container{
+    position: relative;
+    background-color: transparent;
+    width: 93%;
+    height:clamp(50%, 100%, 100%);
+    overflow: hidden;
+}
+.slider-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: left 1s ease;
+}
+.current-image{
+    left: 0;
+}
+.img-button{
+    position: absolute;
+    bottom: 2rem;
+    width: clamp(5rem, 6.5rem, 9rem);
+    height: min(2rem);
+    background-color: rgba(10, 9, 19, 0.514);
+    color: white;
+    border-color: white;
+    transition: left 1s ease;
+    cursor: pointer;
+}
+.current-btn{
+    left: 0;
+}
+.img-button > button{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    color: white;
+    cursor: pointer;
+}
+.img-button > button:hover{
+    background-color: rgba(255, 255, 255, 0.17);
+    border-color: white;
+}
+.indicators-container{
+    position: absolute;
+    width: 26%;
+    height: 10%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10%;
+    left: 37%;
+}
+.slide-indicator{
+    width: 3.5vw;
+    height: 5%;
+    margin-right: 0.5vw;
+    border: none;
+    padding: 0;
+}
+.current-indicator{
+    background-color: rgba(47, 182, 232, 0.886);
+}
+.slider-arrows-container{
+    width: 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 1;
+}
+.slide-arrow{
+    width: min(2.6rem);
+    height: 10%;
+    background-color: transparent;
+    margin-bottom: .625rem;
+    border: none;
+}
+.slide-arrow--right{
+    background-color: transparent;
+    border-color: transparent;
+    fill: rgba(255, 255, 255, 0.47);
+    cursor: pointer;
+}
+.slide-arrow--right:hover{
+    fill: white;
+}
+.slide-arrow--left{
+    background-color: transparent;
+    border-color: transparent;
+    fill: rgba(255, 255, 255, 0.47);
+    cursor: pointer;
+}
+.slide-arrow--left:hover{
+    fill: white;
+}
+
+/* image-slider-view-offers-page */
+
+.slides-offers-container{
+    position: relative;
+    background-color: transparent;
+    width: 45%;
+    height:100%;
+    overflow: hidden; 
+}
+.slider-image-offers{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    transition: bottom 1s ease;
+    object-fit: cover;
+}
+.current-image{
+    left: 0;
+}
+.second-slide-container{
+    position: relative;
+    background-color: transparent;
+    width: 45%;
+    height:100%;
+    overflow: hidden; 
+    font-size: 0;
+    display: inline-block;
+}
+.second-slide-divs{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top 1s ease;
+    padding: 10%;
+    color: white;
+}
+.current-div{
+    top: 0;
+}
+.second-slide-divs > h3{
+    font-size: x-large;
+    color: white;
+    width: 100%;
+    height: 20%;
+}
+.second-slide-divs > p{
+    color: white;
+    width: 100%;
+    height: 80%;
+    font-size: large;
+}
+.indicators-container{
+    position: absolute;
+    width: 26%;
+    height: 10%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10%;
+    left: 37%;
+}
+.slide-indicator{
+    width: 3.5vw;
+    height: 5%;
+    margin-right: 0.5vw;
+    border: none;
+    padding: 0;
+}
+.current-indicator{
+    background-color: rgba(47, 182, 232, 0.886);
+}
+.slider-arrows-container-offers{
+    background-color: transparent;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+}
+.slide-arrow-offers{
+    width: 60%;
+    height: 10%;
+    background-color: transparent;
+    margin-bottom: .625rem;
+    border: none;
+}
+.slide-arrow--up{
+    background-color: transparent;
+    border-color: transparent;
+    fill: rgba(255, 255, 255, 0.47);
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+.slide-arrow--up:hover{
+    fill: white;
+}
+.slide-arrow--down{
+    background-color: transparent;
+    border-color: transparent;
+    fill: rgba(255, 255, 255, 0.47);
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+.slide-arrow--down:hover{
+    fill: white;
+}
+
+/* admin-panel */
+.select-class-container{
+    grid-area: 2/3/4/10;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .125rem;
+}
+.class-data-container{
+    grid-area: 4/3/24/10;
+    padding: 1rem;
+    background-color: rgba(87, 215, 250, 0.257);
+    margin-top: 1.5rem;
+    border-color: white;
+    border-radius: .33rem;
+    border-style: solid;
+    border-width: 2px;
+    overflow-y: scroll;
+}
+.select-class{
+    width: 60%;
+    min-width: 12rem;
+    height: 60%;
+}
+.create-new-row{
+    align-content: center;
+    width: 25%;
+    min-width: 5rem;
+    min-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    right: 5rem;
+    background-color: rgba(241, 93, 24, 0.863);
+    border-color: white;
+    border-radius: .33rem;
+    border-style: solid;
+    border-width: 2px;
+}
+.create-new-row:hover{
+    background-color: rgba(238, 127, 76, 0.863);
+    cursor: pointer;
+}
+.data-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    justify-content: space-between;
+}
+.data-ids{
+    display: flex;
+    align-items: flex-start;
+    width: 65%;
+    height: 100%;
+}
+.data-ids > div{
+    width: 50%;
+    color: white;
+    font-size: 1rem;
+}
+.data-btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+    min-width: 5rem;
+    height: 100%;
+}
+.data-btn{
+    width: 40%;
+    border-radius: .33rem;
+    border-color: white;
+    font-size: .75rem;
+    font-weight: bold;
+    color: white;
+}
+.edit-row{
+    background-color: rgb(0, 255, 0);
+}
+.edit-row:hover{
+    background-color: rgb(97, 235, 97);
+    cursor: pointer;
+}
+.delete-row{
+    background-color: #eb2626;
+}
+.delete-row:hover{
+    background-color: #e47171;
+    cursor: pointer;
+
+}
+.set-data{
+     grid-area: 4/4/24/10;
+     min-width: 20rem;
+     display: flex;
+     padding: 1rem;
+     align-items: center;
+     flex-wrap: wrap;
+    background-color: rgba(87, 215, 250, 0.257);
+    margin-top: 1.5rem;
+    border-color: white;
+    border-radius: .33rem;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+}
+.set-data > label{
+    width: 50%;
+    height: 2rem;
+    font-size: 1rem;
+}
+.set-data > input{
+    width: 50%;
+    height: 2rem;
+}
+.confirm-action{
+    align-content: center;
+    width: 25%;
+    min-width: 5rem;
+    min-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    margin-left: 37.5%;
+    background-color: rgba(247, 140, 9, 0.948);
+    border-color: white;
+    border-radius: .33rem;
+    border-style: solid;
+    border-width: 2px;
+}
+.confirm-action:hover{
+    background-color: rgba(235, 184, 121, 0.863);
+    cursor: pointer;
+}
+.admin-message{
+    color: white;
+}
+@media only screen and (max-width: 940px) {
+    .wrapper {
+    grid-area: 2/1/11/13;
+    }
+    .leftBanner, .rightBanner{
+        width: 0;
+    }
+    #footer-container{
+        display: none;
+    }
+     .current-btn{
+    bottom: 1rem;
+}
+    .img-button{
+        bottom: 1rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .current-btn{
+    bottom: 1rem;
+    }
+    .img-button{
+        bottom: 1rem;
+    }
+     .information-wrapper{
+        height: 75%;
+        padding: 1rem;
+    }
+    #movieTitle{
+        font-size: 1.5rem;
+    }
+    #information{
+        grid-area: 2/2/13/13;
+    }
+    #originalBanner{
+        display: none;
+    }
+    .book-tickets{
+        position: absolute;
+        right: 50%;
+        transform: translateX(-40%);
+        width: 7.5rem;
+        height: 2rem;
+        bottom: -6rem;
+        font-size: 1rem;
+    }
+    .tdInfo{
+        padding-left: .7rem;
+    }
+    #pPremDate, #durationOfMovie{
+        font-size: .65rem;
+        
+    }
+    .theatre-component > h2{
+        font-size: 1rem;
+    }
+    .theatre-component > h4{
+        font-size: .8rem;
+    }
+
+    #contacts-us-img{
+        width: 95%;
+        height: 50%;
+    }
+    .location{
+        width: 100%;
+        height: 15%;
+        margin-bottom: 1.25rem;
+    }
+    #about-us-img{
+        float: left;
+        width: 95%;
+        height: 35%;
+    }
+    #select-cinema > label{
+        width: 30vw;
+        font-size: 1rem;
+    }
+    #select-cinema-name{
+        width: 50vw;
+    }
+    #movie-projection-date{
+        font-size: .9rem;
+        padding-top: .2rem;
+    }
+    .projection-component > h2{
+        font-size: 1rem;
+    }
+    .ticket-banner-container{
+       display: none;
+    }
+    .previous-selections{
+        grid-area: 1/1/5/13;
+        padding-top: 1rem;
+        min-height: 11.75rem;
+        margin: 0;
+    }
+    .previous-selections > article{
+        padding: .5rem;
+    }
+    .previous-selections > article > h3{
+        font-size: 1rem;
+    }
+    .ticket-select-menus{
+        grid-area: 5/1/9/13;
+        padding: 0;
+        padding-top: 3rem;
+    }
+    .ticket-select-menus > label{
+        width: 50%;
+        color: black;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .select-menu{
+        width: 50%;
+        margin-bottom: .625rem;
+        align-items: flex-start;
+    }
+    #choose-seats-btn{
+        width: 7rem;
+        height: 4rem;
+    }
+    html{
+        background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    }
+    .ticket-info{
+        padding: 0;
+    }
+    .ticket-info > p{
+        padding: 0;
+        font-size: .7rem;
+    }
+    .slide-arrow-offers{
+        width: 95%;
+        height: 15%;
+        margin-bottom: .4rem;
+    }
+    .second-slide-divs > h3{
+        margin: 0;
+        font-size: .4rem;
+    }
+    .second-slide-divs > p{
+        font-size: .35rem;
+    }
+    .slide-indicator{
+        width: 5vw;
+        height: 10%;
+    }
+    .slide-arrow{
+        margin-bottom: 1.3rem;
+        width: 2rem;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 650px) and (max-height: 500px) {
+    #innerPar{
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
+    #sub-main{
+        background-image: none;
+    }
+    .information-wrapper{
+        height: min(550px);
+        margin-top: 13rem;
+        width: 90%;
+        padding: 1rem;
+    }
+    .book-tickets{
+        position: absolute;
+        right: 50%;
+        transform: translateX(-40%);
+        width: 7.5rem;
+        height: 2rem;
+        bottom: -2rem;
+        font-size: 1rem;
+    }
+    .tdInfo{
+        padding-left: .7rem;
+    }
+    #pPremDate, #durationOfMovie{
+        font-size: .65rem;
+        
+    }
+    #movie-projection-date{
+        font-size: .7rem;
+        padding-top: .3rem;
+    }
+    .previous-selections{
+        grid-area: 1/1/10/7;
+        font-size: .8rem;
+        padding: 1.5rem;
+    }
+    .ticket-select-menus{
+        grid-area: 1/7/10/12;
+    }
+    .ticket-select-menus > label{
+        color:white;
+        padding-left: 2rem;
+    }
+
+    .slide-arrow-offers{
+        width: 85%;
+        height: 15%;
+        margin-bottom: .4rem;
+    }
+    .second-slide-divs > h3{
+        margin: 0;
+        font-size: .75rem;
+    }
+    .second-slide-divs > p{
+        font-size: .6rem;
+    }
+    .slide-indicator{
+        width: 5vw;
+        height: 10%;
+    }
+    .btns-container{
+        height: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .ulist{
+        font-size: 2rem;
+    }
+    #logo > h3{
+        font-size: 2.5rem;
+    }
+    .img-button{
+        width: 12rem;
+        height: 4rem;
+    }
+    .img-button > button{
+        font-size: 2rem;
+    }
+    .slide-arrow{
+        height: 13%;
+        width: 5rem;
+    }
+    .slide-indicator{
+        height: 10%;
+    }
+    .component{
+        min-width: 20rem;
+        min-height: 35rem;
+    }
+    .title > p {
+        font-size: 1.75rem;
+    }
+    .premiere.prem{
+        font-size: 2rem;
+    }
+    #innerPar, #infoTable{
+        font-size: 1.25rem;
+    }
+    #movieTitle{
+        font-size: 2.5rem;
+    }
+    #durHours, #dateText{
+        font-size: 1.3rem;
+    }
+    .projection-btn, #movie-projection-date{
+        font-size: 1.5rem;
+    }
+    #movie-projection-date{
+        padding-top: 1.35rem;
+    }
+    #select-cinema > label{
+        font-size: 2rem;
+    }
+    #select-cinema-name{
+        height: 2rem;
+        font-size: 1.25rem;
+    }
+    .projection-component, .theatre-component{
+        min-width: 40rem;
+        min-height: 20rem;
+    }
+    .projection-component > h2{
+        font-size: 2rem;
+        padding-top: 0;
+    }
+     .projection-component > h4{
+        font-size: 1.35rem;
+    }
+    .click-projection{
+        font-size: 1.5rem;
+    }
+    .previous-selections > article > h3{
+        font-size: 2rem;
+    }
+    #select-adults, #select-children{
+        min-height: 2rem;
+        font-size: 1rem;
+    }
+    #choose-seats-btn{
+        font-size: 1.2rem;
+    }
+    .scheme-td, .row-number{
+        font-size: 1.5rem;
+    }
+    #main-container > div > div.ticket-information-container > div.ticket-info > p{
+        font-size: 1.65rem;
+    }
+    .legend > div{
+        font-size: 1.3rem;
+    }
+    .confirm-btn{
+        font-size: 1.5rem;
+    }
+    .theatre-component > h2{
+        font-size: 2rem;
+    }
+    .theatre-component > h4{
+        font-size: 1.75rem;
+    }
+    .thanchor{
+        width: 10rem;
+        height: 3.5rem;
+    }
+    .theatre-btn{
+        font-size: 1rem;
+    }
+    .second-slide-divs > h3{
+        font-size: 2.25rem;
+    }
+    .second-slide-divs > p{
+        font-size: 1.25rem;
+    }
+    .btns-container, .form-container{
+        width: 32rem;
+    }
+    .btns-container{
+        font-size: 2.5rem;
+        height:20%;
+    }
+    .btns-container > button{
+        font-size: 2rem;
+    }
+    .form-container{
+        height: 80%;
+    }
+    #log-submit{
+        font-size: 1.5rem;
+    }
+}
