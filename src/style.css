@@ -1288,7 +1288,9 @@
    
     background-color: transparent;
     width: 75vw;
+    min-width: 40rem;
     height: 33vw;
+    min-height: 20rem;
     display: flex;
     flex-direction: row;
 }
