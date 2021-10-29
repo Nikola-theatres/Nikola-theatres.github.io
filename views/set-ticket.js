@@ -1,6 +1,7 @@
 import {
-    html
-} from "../node_modules/lit-html/lit-html.js";
+    html,
+    render
+} from '//unpkg.com/lit-html?module';
 
 export let setTicketTemplate = (ticketInfo, data, movie) => 
 html `<div class="ticket-main-container">

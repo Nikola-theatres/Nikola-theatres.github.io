@@ -1,6 +1,6 @@
 import {
     html
-} from "../node_modules/lit-html/lit-html.js";
+} from '//unpkg.com/lit-html?module';
 export let aboutTemplate = () =>
     html `<div class="about-container">
         <div class="img-about">

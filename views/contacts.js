@@ -1,6 +1,7 @@
 import {
-    html
-} from "../node_modules/lit-html/lit-html.js";
+    html,
+    render
+} from '//unpkg.com/lit-html?module';
 export let contactsTemplate = (cinemas) =>
    html `<div class="contacts-container">
         <div class="img-contacts">

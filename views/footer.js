@@ -1,6 +1,7 @@
 import {
-    html
-} from "../node_modules/lit-html/lit-html.js";
+    html,
+    render
+} from '//unpkg.com/lit-html?module';
 export let footerTemplate = () =>
     html `<div class="footer-sub">
         <div ><a href="/contacts" class="ulist">Contacts</a></div>

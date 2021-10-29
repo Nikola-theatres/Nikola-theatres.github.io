@@ -1,6 +1,7 @@
 import {
-    html
-} from "../node_modules/lit-html/lit-html.js";
+    html,
+    render
+} from '//unpkg.com/lit-html?module';
 
 export let doubleSlider = (slides) =>
     html `
