@@ -5,7 +5,7 @@ import {
 
 export let doubleSlider = (slides) =>
     html `
-    <div class="slider-wrapper">
+    <div class="double-slider">
         <div class="slides-offers-container">
             ${slides.map(x => html` <img class="slider-image-offers" src=${x.asset} alt="slider">
             ${x.hasOwnProperty("href") ? html`<a class="img-button" href=${x.href}><button>${x.href.slice(1).toUpperCase()}</button></a>` : ""}`)}
