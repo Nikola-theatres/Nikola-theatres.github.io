@@ -138,16 +138,20 @@ export async function setHomePage(ctx, next) {
         
         let slides = [{
             asset: "/assets/bond.jpg",
-            href: "/movies"
+            href: "/movies",
+            title: "view our latest movies"
         }, {
             asset: "/assets/newark.jpg",
-            href: "/book"
+            href: "/book",
+            title: "book tickets"
         }, {
             asset: "/assets/cruella-slide.jpg",
-            href: "/cinemas"
+            href: "/cinemas",
+            title: "theatres"
         }, {
             asset: "/assets/promo.jpg",
-            href: "/offers"
+            href: "/offers",
+            title: "promotions"
         }, ];
         ctx.render(sliderTemplate(slides), mainContainer);
         setSliderImages(...getSliderDomElements("slides-container", "slider-image", "img-button", "slide-indicator"));
